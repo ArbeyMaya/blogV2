@@ -82,9 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Usar el backend de MySQL
         'NAME': 'blog',  # El nombre de tu base de datos
-        'USER': 'root',                 # Tu usuario de MySQL
-        'PASSWORD': '',          # La contraseña del usuario
-        'HOST': 'localhost',                  # O la dirección IP del servidor MySQL
+        'USER': 'admin',                 # Tu usuario de MySQL
+        'PASSWORD': 'Arbeygamer12',          # La contraseña del usuario
+        'HOST': 'ecoblog.cvm02cauqmhb.us-east-2.rds.amazonaws.com',                  # O la dirección IP del servidor MySQL
         'PORT': '3306',                       # El puerto MySQL (generalmente es 3306)
     }
 }
