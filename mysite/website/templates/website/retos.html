@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos Sostenibles</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            background-color: #4CAF50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .retos-section {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        .retos-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .reto-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .reto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .reto-card h3 {
+            font-size: 1.5rem;
+            color: #28a745;
+        }
+        .reto-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        /* Estilos adicionales */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'website/images/logo.jpg' %}" alt="Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'website:index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Retos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog:post_list' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'website:huella' %}" class="btn nav-link">Huella</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>¡Únete a los Retos Sostenibles!</h1>
+            <p>Participa y haz una diferencia en la lucha por un mundo más verde.</p>
+        </div>
+    </section>
+
+    <!-- Retos Section -->
+    <section class="retos-section">
+        <div class="container">
+            <h2>Explora nuestros Retos</h2>
+            <div class="row">
+                <!-- Reto 1 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Cero desperdicio durante una semana</h3>
+                        <p>Intenta no generar basura durante una semana, evitando productos desechables y eligiendo opciones reutilizables.</p>
+                    </div>
+                </div>
+                <!-- Reto 2 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Transporte sostenible</h3>
+                        <p>Desafíate a utilizar solo transporte público, bicicleta o caminar durante un mes. Si necesitas un auto, considera compartirlo o usar un coche eléctrico.</p>
+                    </div>
+                </div>
+                <!-- Reto 3 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Dieta vegetariana o vegana</h3>
+                        <p>Prueba una dieta sin carne o productos animales durante un mes para reducir la huella de carbono asociada con la producción de alimentos.</p>
+                    </div>
+                </div>
+                <!-- Reto 4 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Reducir el consumo de energía</h3>
+                        <p>Apaga luces y aparatos electrónicos cuando no los uses y reduce el uso de calefacción y aire acondicionado. Establece un objetivo de reducir el consumo de electricidad en un 20%.</p>
+                    </div>
+                </div>
+                <!-- Reto 5 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Compra local</h3>
+                        <p>Comprométete a comprar solo productos locales y de temporada durante un mes para reducir la huella de transporte.</p>
+                    </div>
+                </div>
+                <!-- Reto 6 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Menos agua</h3>
+                        <p>Desafíate a reducir el consumo de agua en tu hogar, utilizando técnicas como duchas más cortas y recogiendo agua de lluvia.</p>
+                    </div>
+                </div>
+                <!-- Reto 7 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Uso consciente de productos de limpieza</h3>
+                        <p>Opta por productos ecológicos o haz tus propios limpiadores caseros para disminuir el uso de químicos dañinos.</p>
+                    </div>
+                </div>
+                <!-- Reto 8 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Reciclaje y compostaje</h3>
+                        <p>Establece un sistema de reciclaje en casa y comienza a compostar tus desechos orgánicos.</p>
+                    </div>
+                </div>
+                <!-- Reto 9 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Educación y sensibilización</h3>
+                        <p>Dedica tiempo a aprender sobre sostenibilidad y comparte lo que aprendes con amigos y familiares.</p>
+                    </div>
+                </div>
+                <!-- Reto 10 -->
+                <div class="col-md-6">
+                    <div class="reto-card">
+                        <h3>Plantación de árboles</h3>
+                        <p>Participa en una campaña de reforestación o planta árboles en tu comunidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

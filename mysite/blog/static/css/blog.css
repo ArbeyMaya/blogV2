@@ -1,0 +1,317 @@
+body { 
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif; 
+}
+
+a { 
+    color:#00abff;
+    text-decoration:none; 
+}
+
+h1 { 
+    font-weight:normal;
+    border-bottom:1px solid #bbb;
+    padding:0 0 10px 0;
+}
+
+h2 {
+    font-weight:normal;
+    margin:30px 0 0;
+}
+
+#content { 
+    float:left;
+    width:60%;
+    padding:0 0 0 30px; 
+}
+
+#sidebar { 
+    float:right;
+    width:30%;
+    padding:10px;
+    background:#efefef; 
+    height:100%;
+}
+
+p.date { 
+    color:#ccc;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic; 
+}
+
+.left {
+    float:left;
+    margin-right:10px;
+}
+
+/* pagination */
+.pagination { 
+    margin:40px 0; 
+    font-weight:bold;
+}
+
+/* forms */
+label { 
+    float:left;
+    clear:both;
+    color:#333;
+    margin-bottom:4px; 
+}
+input, textarea { 
+    clear:both;
+    float:left;
+    margin:0 0 10px;
+    background:#ededed;
+    border:0;
+    padding:6px 10px;
+    font-size:12px;
+}
+input[type=submit] {
+    font-weight:bold;
+    background:#00abff;
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase; 
+}
+.errorlist { 
+    color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px; 
+}
+
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:#efefef;
+}
+.comment .info {
+    font-weight:bold;
+    font-size:12px;
+    color:#666;
+}
+
+.post-image {
+    max-width: 10rem;    /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto;       /* Mantiene las proporciones de la imagen */
+    display: block;     /* Elimina los espacios en blanco alrededor de la imagen */
+    margin: 0 auto;     /* Centra la imagen horizontalmente */
+  }
+
+/* blog.css */
+body {
+    background-color: #e9f7ef;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  h1, h2 {
+    color: #2d6a4f;
+  }
+  
+  a {
+    color: #2d6a4f;
+  }
+  
+  .card-title a {
+    color: #1b4332;
+    font-weight: bold;
+  }
+  
+  footer {
+    background-color: #d8f3dc;
+  }
+  
+  .comment {
+    background-color: #f0f4c3;
+  }
+  
+  .comment p {
+    color: #3e7c17;
+  }
+
+  /* Animaciones */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Botones animados */
+.btn-primary {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #40916c;
+    transform: scale(1.05);
+  }
+
+  /* Animación footer */
+@keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  footer {
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out forwards;
+    animation-delay: 0.5s; /* Empieza después de 0.5 segundos de haber hecho scroll */
+  }
+
+  /* Animación en comentarios */
+.comment {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .comment:hover {
+    background-color: #dcedc8;
+    transform: translateY(-5px);
+  }
+
+  /* Animación en el título */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+/* Animaciones */
+
+/* Fade-in desde abajo */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  /* Botones animados */
+  .btn-primary {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #40916c;
+    transform: scale(1.05);
+  }
+  
+  /* Footer animación */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  footer {
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out forwards;
+    animation-delay: 0.5s; /* Empieza después de 0.5 segundos de haber hecho scroll */
+  }
+  
+  /* Animación en comentarios */
+  .comment {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .comment:hover {
+    background-color: #dcedc8;
+    transform: translateY(-5px);
+  }
+  
+  /* Animación en el título */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+/* Animación hover en las tarjetas */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Otros estilos que ya tienes */
+  .btn-primary {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #40916c;
+    transform: scale(1.05);
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card-link:hover {
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  

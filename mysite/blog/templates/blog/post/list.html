@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% block title %}EcoBlog{% endblock %}
+
+{% block content %}
+  <h1>EcoBlog</h1>
+  <div class="row">
+    {% for post in posts %}
+      <div class="col-md-4 mb-4">
+        <a href="{{ post.get_absolute_url }}" class="card-link">
+          <div class="card h-100">
+            <!-- Imagen del post -->
+            {% if post.image %}
+              <img src="{{ post.image.url }}" class="card-img-top" alt="Image for {{ post.title }}">
+              {% elif post.video %}
+              <!-- Miniatura del video con tamaño reducido -->
+              <div class="d-flex justify-content-center">
+                <video class="card-img-top video-thumbnail" controls style="width: 11rem;">
+                  <source src="{{ post.video.url }}" type="video/mp4">
+                  Tu navegador no soporta el video.
+                </video>
+              </div>
+            {% endif %}            
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">
+                {{ post.body|truncatewords:30|linebreaks }}
+              </p>
+              <p class="text-muted">Publicado {{ post.publish }} por {{ post.author }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  
+  {% include "pagination.html" with page=page_obj %}
+{% endblock %}

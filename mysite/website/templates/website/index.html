@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Verde</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+        }
+        .hero {
+            background-color: #4CAF50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .info-section {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        .info-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .info-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .info-card h3 {
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+        .info-card p {
+            font-size: 0.9rem;
+        }
+        .decarbon-section {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+        .decarbon-section img {
+            max-width: 100%;
+        }
+        .decarbon-section h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Aplica la animación cuando las tarjetas entran en la vista */
+        .info-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Animación de 'hover' en las tarjetas */
+        .info-card:hover {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Añade sombra para dar efecto de profundidad */
+        }
+
+        /* Añadir un pequeño retraso en la animación para cada tarjeta */
+        .info-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .info-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .info-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .info-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-card img {
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .info-card h3 {
+            transition: color 0.3s ease;
+        }
+        
+        .info-card:hover h3 {
+            color: #28a745;
+        }
+        
+        /* Fondo degradado y tipografía personalizada */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #28a745 30%, #9be15d);
+        color: white;
+        height: 100vh;
+    }
+
+    .hero {
+        padding: 100px 0;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Estilo para el título principal */
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    /* Estilo para el párrafo */
+    .hero p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-top: 20px;
+        line-height: 1.6;
+        color: #e0e0e0;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    /* Animación sutil */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Estilo para la imagen redondeada */
+    .hero img {
+        max-width: 80%;
+        border: 8px solid #ffffff;
+        border-radius: 50%;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .hero img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Ajustes en dispositivos pequeños */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero img {
+            max-width: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'website/images/logo.jpg' %}" alt="Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'website:index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'website:retos' %}" class="btn nav-link">Retos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'blog:post_list' %}" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'website:huella' %}" class="btn nav-link">Huella</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center">
+                <!-- Columna para el texto -->
+                <div class="col-md-6">
+                    <h1>EcoBlog</h1>
+                    <h2>Sembrando conciencia, cosechando un futuro verde.</h2>
+                    <p>La sostenibilidad es un desafío global que requiere la colaboración de todos los sectores de la sociedad, desde los gobiernos hasta las empresas y los individuos. Es esencial para garantizar un futuro sostenible para todos.</p>
+                </div>
+    
+                <!-- Columna para la imagen -->
+                <div class="col-md-6 text-center">
+                    <img src="{% static 'website/images/img02.jpg' %}" alt="Conservación" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2 style="color: black;">Conoce sobre distintos temas como</h2>
+            <div class="row text-center">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="info-card p-4">
+                        <img src="{% static 'website/images/img04.jpg' %}" alt="Calentamiento Global" class="img-fluid">
+                        <h3 class="text-dark">Calentamiento Global</h3>
+                        <p class="text-dark">El aumento de la temperatura de la Tierra, causado principalmente por la acumulación de gases de efecto invernadero debido a actividades humanas.</p>
+                        <a href="#" class="btn btn-outline-success btn-sm">Leer más</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="info-card p-4">
+                        <img src="{% static 'website/images/img05.jpg' %}" alt="Huella de Carbono" class="img-fluid">
+                        <h3 class="text-dark">Huella de Carbono</h3>
+                        <p class="text-dark">Es la cantidad total de emisiones de gases de efecto invernadero, como el dióxido de carbono, que genera directa o indirectamente una persona, organización o actividad.</p>
+                        <a href="#" class="btn btn-outline-success btn-sm">Leer más</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="info-card p-4">
+                        <img src="{% static 'website/images/img06_1.jpg' %}" alt="Plantación de Árboles" class="img-fluid">
+                        <h3 class="text-dark">Plantación de Árboles</h3>
+                        <p class="text-dark">Contribuye a la calidad del medio ambiente. Los árboles absorben dióxido de carbono y producen oxígeno, mejorando la calidad del aire.</p>
+                        <a href="#" class="btn btn-outline-success btn-sm">Aprende a plantar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decarbonization Strategy Section -->
+    <section class="decarbon-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{% static 'website/images/img03.png' %}" alt="Decarbonization Strategy">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-dark">Estrategia de Descarbonización</h3>
+                    <p class="text-dark">Usar electricidad 100% renovable y convertirnos en una empresa neutra en carbono. Además, implementamos proyectos para reducir las emisiones de carbono mediante tecnologías innovadoras.</p>
+                    <p class="text-dark">Globant está trabajando país por país para reducir las emisiones de carbono comprando electricidad que proviene de fuentes renovables. Además compensamos el resto de nuestra huella de carbono con inversiones en proyectos innovadores que representan nuestros valores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.info-card');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });        
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h2>Deja un comentario</h2>
+<form action="{% url "blog:post_comment" post.id %}" method="post" class="mb-3">
+  <div class="mb-3">
+    {{ form.name.label_tag }}
+    {{ form.name }}
+  </div>
+  <div class="mb-3">
+    {{ form.email.label_tag }}
+    {{ form.email }}
+  </div>
+  <div class="mb-3">
+    {{ form.body.label_tag }}
+    {{ form.body }}
+  </div>
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary">Comentar</button>
+</form>

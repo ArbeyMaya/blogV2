@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <h1 class="mb-3">{{ post.title }}</h1>
+  <p class="text-muted">Publicado {{ post.publish }} por {{ post.author }}</p>
+
+  {% if post.image %}
+    <img src="{{ post.image.url }}" class="img-fluid mb-3" alt="Imagen de {{ post.title }}">
+  {% endif %}
+
+  {% if post.video %}
+  <div class="d-flex justify-content-center">
+    <video class="custom-video mb-3" controls>
+      <source src="{{ post.video.url }}" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+{% endif %}
+
+
+
+  <div class="post-content mb-4">
+    {{ post.body|linebreaks }}
+  </div>
+
+  <a class="btn btn-primary" href="{% url 'blog:post_share' post.id %}">Compartir</a>
+
+  {% with comments.count as total_comments %}
+    <h2 class="mt-5">{{ total_comments }} comentario(s)</h2>
+  {% endwith %}
+
+  <div class="comments">
+    {% for comment in comments %}
+      <div class="comment border p-3 mb-3">
+        <p class="mb-1"><strong>{{ comment.name }}</strong> comentó el {{ comment.created }}</p>
+        <p>{{ comment.body|linebreaks }}</p>
+      </div>
+    {% empty %}
+      <p>No hay comentarios aún.</p>
+    {% endfor %}
+  </div>
+
+  {% include "blog/post/includes/comment_form.html" %}
+{% endblock %}
